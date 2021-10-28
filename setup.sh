@@ -3,8 +3,8 @@
 scriptpath="$(dirname $(readlink -f $0))/$(basename $0)"
 
 # Update System
-apt update -y
-apt upgrade -y
+apt update
+apt upgrade
 
 # Easy Installations
 apt install software-properties-common -y
