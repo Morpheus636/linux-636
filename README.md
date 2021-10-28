@@ -12,6 +12,7 @@ A set of configuration files (dotfiles) and shell scripts for setting up my desk
 - Chrome
 - VSCode
 - Pycharm CE
+- Discord
 
 ## Themes / Icon Packs
 - Avidity Total Dusk Theme (Included locally in Repo)
