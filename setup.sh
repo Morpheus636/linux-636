@@ -4,7 +4,7 @@ scriptpath="$(dirname $(readlink -f $0))/$(basename $0)"
 
 # Update System
 apt update
-apt upgrade
+apt install upgrade
 
 # Easy Installations
 apt install software-properties-common -y
@@ -24,11 +24,8 @@ cd ./shell # CD into the repo clone
 make local-install
 cd $scriptpath # CD back to the source dir.
 
-# Install Avidity Total Dusk Theme
-apt-get install gtk2-engines-murrine -y
-unzip ./Avidity-Total-Dusk.zip -d /usr/share/themes/
-# Install Avidity Total Dusk Icon Pack
-unzip ./Avidity-Total-Dusk-Suru-Reversed.zip -d /usr/share/icons/
+# Install Theme
+./instalTheme.sh
 
 # Add Deadsnakes PPA (For multiple python versions)
 add-apt-repository ppa:deadsnakes/ppa
