@@ -16,6 +16,7 @@ apt install gnome-tweaks -y
 apt install gnome-shell-extensions -y
 snap install pycharm-community --classic
 snap install discord
+apt install vim -y
 
 # Pop Shell
 apt install node-typescript -y make git
