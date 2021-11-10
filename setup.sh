@@ -17,6 +17,8 @@ apt install gnome-shell-extensions -y
 snap install pycharm-community --classic
 snap install discord
 apt install vim -y
+apt-install postgresql -y
+export PATH="/usr/lib/postgresql/12/bin/:$PATH"
 
 # Pop Shell
 apt install node-typescript -y make git
