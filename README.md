@@ -30,6 +30,6 @@ Installs the following themes and icon packs.
 - Avidity Total Dusk Theme (Included locally in Repo)
 - Avidity Total Dusk Suru Icon Pack (Reversed)
 
-# user-config
+# user-config.sh
 - Creates a `Repos` directory within `~/Documents/`
 - Configures an OpenVPN client connection (place an openvpn config file in this directory after git cloning)
