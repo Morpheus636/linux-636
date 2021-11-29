@@ -3,7 +3,9 @@ A set of configuration files (dotfiles) and shell scripts for setting up my desk
 
 You're welcome to use this repo as a starting point for your own install scripts.
 
-# Installs
+# install-apps.sh
+Installs the following. It also installs other dependencies (both explicitly and implicitly)
+which may not be listed here.
 ## Apps
 - Git
 - NodeJS
@@ -17,10 +19,17 @@ You're welcome to use this repo as a starting point for your own install scripts
 - Discord
 - Docker
 - Docker Compose
+- Filezilla
+- OpenVPN
+## PPAs
+- `ppa:deadsnakes/ppa`
 
-## Themes / Icon Packs
+
+# install-theme.sh
+Installs the following themes and icon packs.
 - Avidity Total Dusk Theme (Included locally in Repo)
 - Avidity Total Dusk Suru Icon Pack (Reversed)
 
-## PPAs
-- `ppa:deadsnakes/ppa`
+# user-config
+- Creates a `Repos` directory within `~/Documents/`
+- Configures an OpenVPN client connection (place an openvpn config file in this directory after git cloning)

@@ -19,6 +19,8 @@ snap install discord
 apt-get install vim -y
 apt-get install curl -y
 apt-get install zeal -y
+apt-get install openvpn -y
+apt-get install filezilla -y
 
 # Pop Shell
 apt-get install node-typescript -y make git
