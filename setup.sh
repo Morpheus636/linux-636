@@ -9,3 +9,7 @@ chmod +x ./install-apps.sh
 # Run install theme
 chmod +x ./install-theme.sh
 ./install-theme.sh
+
+# Run user config
+chmod +x ./user-config.sh
+./user-config.sh
