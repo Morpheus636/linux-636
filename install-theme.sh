@@ -2,12 +2,12 @@
 
 scriptpath="$(dirname $(readlink -f $0))/$(basename $0)"
 
-apt update
-apt install upgrade
+apt-get update -y
+apt-get install upgrade -y
 
 # Ensure Gnome Tweaks is installed.
-apt install gnome-tweaks -y
-apt install gnome-shell-extensions -y
+apt-get install gnome-tweaks -y
+apt-get install gnome-shell-extensions -y
 
 # Install Dep for Avidity themes.
 apt-get install gtk2-engines-murrine -y
