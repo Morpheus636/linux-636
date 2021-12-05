@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Eclipse IDE for C/C++ Developers
+Comment=IDE for C/C++
+Icon=HOMEDIR/eclipse/cpp/eclipse/icon.xpm
+Exec=eclipse-cpp
+Terminal=false
+Categories=Programming

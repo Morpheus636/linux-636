@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Eclipse IDE for Java Developers
+Comment=IDE for C/C++
+Icon=HOMEDIR/eclipse/java/eclipse/icon.xpm
+Exec=eclipse-java
+Terminal=false
+Categories=Programming
