@@ -4,3 +4,5 @@
 # OpenVPN
 client.conf
 *.ovpn
+
+tmp*
