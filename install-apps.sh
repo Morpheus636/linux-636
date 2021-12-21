@@ -68,6 +68,7 @@ chmod +x /usr/local/bin/docker-compose
 apt-get install libcanberra-gtk-module -y
 apt-get install default-jdk -y
 
+mkdir -p $HOMEDIR/.local/bin
 # Install Eclipse Cpp to $HOMEDIR/eclipse/cpp/eclipse/eclipse
 mkdir -p $HOMEDIR/eclipse/cpp/
 wget https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2021-09/R/eclipse-cpp-2021-09-R-linux-gtk-x86_64.tar.gz -O - | tar -xz -C $HOMEDIR/eclipse/cpp/
