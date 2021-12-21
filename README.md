@@ -10,8 +10,18 @@ Other scripts in this directory are run automatically by `setup.sh` and could ca
 1. Install Ubuntu 20.04 Desktop. Minimal edition should work fine.
 2. Download this repository to somewhere in your user directory. `~/Documents` works well.
 3. `cd` into the directory
-4. `chmod +x ./setup.sh`
-5. `sudo ./setup.sh $USER`
+4. OPTIONAL - Place an OpenVPN config file (certs must be included in the file) called `client.ovpn` in the `config` directory
+    OpenVPN configuration will just be skipped if the file does not exist.
+5. `chmod +x ./setup.sh`
+6. `sudo ./setup.sh $USER`
+
+## Post-Script Manual Configuration
+Some changes cannot be made by the script due to limitations of the software involved, or authentication requirements. 
+
+You will need to do the following manually:
+- Sign into Chrome. It should sync your config from other devices manually
+- Sign into VSCode using your Microsoft account and enable sync.
+- Sign into PyCharm with your jetbrains account.
 
 # Scripts
 ## setup.sh
