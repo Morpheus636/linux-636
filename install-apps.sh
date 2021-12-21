@@ -27,6 +27,7 @@ apt-get install build-essential -y
 # Easy Apps - Snap
 snap install pycharm-community --classic
 snap install discord
+snap install thunderbird
 
 # Install Pop Shell
 apt-get install node-typescript -y make git
@@ -86,3 +87,5 @@ ln -s  $HOMEDIR/eclipse/java/eclipse/eclipse  $HOMEDIR/.local/bin/eclipse-java
 cp ./deps-assets/eclipse/eclipse-java.desktop $HOMEDIR/.local/share/applications/eclipse-java.desktop
 sed -i "/s/HOMEDIR/$HOMEDIR/g" $HOMEDIR/.local/share/applications/eclipse-java.desktop
 chmod +x $HOMEDIR/.local/share/applications/eclipse-java.desktop
+
+# TODO - Install Git LFS
