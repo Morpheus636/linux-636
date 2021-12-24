@@ -23,6 +23,7 @@ apt-get install zeal -y
 apt-get install openvpn -y
 apt-get install filezilla -y
 apt-get install build-essential -y
+apt-get install freecad -y
 
 # Easy Apps - Snap
 snap install pycharm-community --classic
