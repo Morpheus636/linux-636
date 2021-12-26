@@ -5,7 +5,7 @@ homedir=/home/$1
 
 # Update System
 apt-get update
-apt-get install upgrade
+apt-get upgrade -y
 
 # Dependencies
 apt-get install git -y
@@ -23,7 +23,7 @@ apt-get install zeal -y
 apt-get install openvpn -y
 apt-get install filezilla -y
 apt-get install build-essential -y
-apt-get install freecad -y
+apt-get install transmission-gtk -y
 
 # Easy Apps - Snap
 snap install pycharm-community --classic
@@ -40,6 +40,12 @@ cd $scriptpath # CD back to the source dir.
 # Add Deadsnakes PPA (For multiple python versions)
 add-apt-repository ppa:deadsnakes/ppa
 apt-get update 
+
+# Install FreeCAD
+add-apt-repository ppa:freecad-maintainers/freecad-stable
+apt-get update
+apt-get install freecad -y
+apt-get upgrade -y
 
 # Install Chrome
 add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
