@@ -10,8 +10,10 @@ Other scripts in this directory are run automatically by `setup.sh` and could ca
 1. Install Ubuntu 20.04 Desktop. Minimal edition should work fine.
 2. Download this repository to somewhere in your user directory. `~/Documents` works well.
 3. `cd` into the directory
-4. OPTIONAL - Place an OpenVPN config file (certs must be included in the file) called `client.ovpn` in the `config` directory
+4. OPTIONAL
+    - Place an OpenVPN config file (certs must be included in the file) called `client.ovpn` in the `config` directory
     OpenVPN configuration will just be skipped if the file does not exist.
+    - 
 5. `chmod +x ./setup.sh`
 6. `sudo ./setup.sh $USER`
 
@@ -48,7 +50,8 @@ which may not be listed here.
 - Docker
 - Docker Compose
 - Filezilla
-- OpenVPN
+- Thunderbird
+- OpenVPN Client (Optional - See Usage Instructions)
 ### PPAs
 - `ppa:deadsnakes/ppa`
 
