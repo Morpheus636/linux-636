@@ -96,4 +96,8 @@ cp ./deps-assets/eclipse/eclipse-java.desktop $HOMEDIR/.local/share/applications
 sed -i "/s/HOMEDIR/$HOMEDIR/g" $HOMEDIR/.local/share/applications/eclipse-java.desktop
 chmod +x $HOMEDIR/.local/share/applications/eclipse-java.desktop
 
-# TODO - Install Git LFS
+# TODO - Install Git lfs
+
+# TODO - Install RawTherapee
+
+# TODO - Install GIMP
