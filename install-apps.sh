@@ -15,7 +15,6 @@ apt-get install apt-transport-https -y
 apt-get install wget -y
 
 # Easy Apps - Apt
-apt-get install nodejs -y
 apt-get install gnome-tweaks -y
 apt-get install gnome-shell-extensions -y
 apt-get install vim -y
@@ -40,6 +39,10 @@ cd $scriptpath # CD back to the source dir.
 # Add Deadsnakes PPA (For multiple python versions)
 add-apt-repository ppa:deadsnakes/ppa
 apt-get update 
+
+# Install NodeJS 16
+curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
+apt-get install nodejs -y
 
 # Install FreeCAD
 add-apt-repository ppa:freecad-maintainers/freecad-stable
