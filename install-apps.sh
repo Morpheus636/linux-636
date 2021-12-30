@@ -50,10 +50,19 @@ snap install thunderbird
 
 # Install Pop Shell
 apt-get install node-typescript -y make git
+cd $HOMEDIR
 git clone https://github.com/pop-os/shell
 cd ./shell # CD into the repo clone
 make local-install
 cd $scriptpath # CD back to the source dir.
+
+# Install Morpheus636's Desktop Utils
+cd $HOMEDIR
+git clone https://github.com/Morpheus636/desktop-utils.git
+cd ./desktop-utils
+chmod +x ./install.sh
+./install.sh -d $HOMEDIR/.loal/bin
+cd $scriptpath
 
 # Add Deadsnakes PPA (For multiple python versions)
 add-apt-repository ppa:deadsnakes/ppa
