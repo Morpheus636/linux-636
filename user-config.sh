@@ -17,7 +17,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this repository.  If not, see <https://www.gnu.org/licenses/>.
 
-scriptpath="$(dirname $(readlink -f $0))/$(basename $0)"
+scriptpath="$(dirname $(dirname $(readlink -f $0))/$(basename $0))"
 HOMEDIR=$1
 
 # Make repos directory

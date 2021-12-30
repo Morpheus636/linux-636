@@ -18,7 +18,7 @@
 #    along with this repository.  If not, see <https://www.gnu.org/licenses/>.
 
 
-scriptpath="$(dirname $(readlink -f $0))/$(basename $0)"
+scriptpath="$(dirname $(dirname $(readlink -f $0))/$(basename $0))"
 homedir=/home/$1
 
 # Update System
