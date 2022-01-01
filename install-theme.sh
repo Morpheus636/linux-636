@@ -30,6 +30,6 @@ apt-get install gnome-shell-extensions -y
 apt-get install gtk2-engines-murrine -y
 
 # Install included Avidity Total Dusk theme.
-unzip ./deps-assets/theme.zip -d /usr/share/themes/
+unzip ./assets/theme.zip -d /usr/share/themes/
 # Install included Avidity Total Dusk Reversed icon pack.
-unzip ./deps-assets/icons.zip -d /usr/share/icons/
+unzip ./assets/icons.zip -d /usr/share/icons/

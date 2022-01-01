@@ -113,7 +113,7 @@ wget https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2021-09/R/e
 # Symlink Eclipse Cpp to $HOMEDIR/bin/eclipse-cpp
 ln -s  $HOMEDIR/eclipse/cpp/eclipse/eclipse  $HOMEDIR/.local/bin/eclipse-cpp
 # Add eclipse cpp to the applicaitons menu
-cp ./deps-assets/eclipse/eclipse-cpp.desktop $HOMEDIR/.local/share/applications/eclipse-cpp.desktop
+cp ./assets/eclipse/eclipse-cpp.desktop $HOMEDIR/.local/share/applications/eclipse-cpp.desktop
 sed -i "/s/HOMEDIR/$HOMEDIR/g" $HOMEDIR/.local/share/applications/eclipse-cpp.desktop
 chmod +x $HOMEDIR/.local/share/applications/eclipse-cpp.desktop
 
@@ -123,7 +123,7 @@ wget https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2021-09/R/e
 # Symlink Eclipse Java to $HOMEDIR/bin/eclipse-java
 ln -s  $HOMEDIR/eclipse/java/eclipse/eclipse  $HOMEDIR/.local/bin/eclipse-java
 # Copy the .desktop file for eclipse java to add it to the applications menu
-cp ./deps-assets/eclipse/eclipse-java.desktop $HOMEDIR/.local/share/applications/eclipse-java.desktop
+cp ./assets/eclipse/eclipse-java.desktop $HOMEDIR/.local/share/applications/eclipse-java.desktop
 sed -i "/s/HOMEDIR/$HOMEDIR/g" $HOMEDIR/.local/share/applications/eclipse-java.desktop
 chmod +x $HOMEDIR/.local/share/applications/eclipse-java.desktop
 

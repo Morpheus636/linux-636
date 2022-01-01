@@ -24,23 +24,23 @@ HOMEDIR=$1
 mkdir -p $HOMEDIR/Documents/Repos
 
 # BASH Configuration
-cp ./config/.bashrc $HOMEDIR
-cp ./config/.bash_aliases $HOMEDIR
+cp ./assets/config/.bashrc $HOMEDIR
+cp ./assets/config/.bash_aliases $HOMEDIR
 
 # Set wallpaper
 mkdir -p $HOMEDIR/Pictures/wallpaper
-cp ./deps-assets/wallpaper.jpg $HOMEDIR/Pictures/Wallpaper
+cp ./assets/wallpaper.jpg $HOMEDIR/Pictures/Wallpaper
 gsettings set org.gnome.desktop.background picture-uri "file:///${HOMEDIR}/Pictures/Wallpaper/wallpaper.jpg"
 
 
 # TODO - Gnome Tweaks Configuration
 
 # Git configuration
-cp ./config/.gitconfig $HOMEDIR/
+cp ./assets/config/.gitconfig $HOMEDIR/
 
 # OpenVPN Configuration
 if [[ -f "./config/client.ovpn" ]]; then
-    nmcli connection import type openvpn file ./config/client.ovpn
+    nmcli connection import type openvpn file ./assets/config/client.ovpn
 fi
 
 # TODO - Install Zeal Docsets
