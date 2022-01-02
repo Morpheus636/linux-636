@@ -4,6 +4,7 @@ alias full_upgrade='full_update'
 alias update='sudo apt update'
 alias upgrade='sudo apt upgrade'
 alias network-manager='echo Its nmcli, idiot.'
+alias whoowns="stat -c '%U'"
 
 
 # Fun
