@@ -38,6 +38,9 @@ Installs the following. It also installs other dependencies (both explicitly and
 which may not be listed here.
 ### Apps
 - Git
+- Curl
+- Wget
+- Network Manager
 - NodeJS
 - Gnome Tweaks
 - Gnome Shell Extensions
@@ -52,6 +55,8 @@ which may not be listed here.
 - Filezilla
 - Thunderbird
 - OpenVPN Client (Optional - See Usage Instructions)
+- Morpheus636's Desktop Utils
+- FreeCAD
 ### PPAs
 - `ppa:deadsnakes/ppa`
 
