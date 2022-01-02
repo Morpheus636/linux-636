@@ -17,7 +17,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this repository.  If not, see <https://www.gnu.org/licenses/>.
 
-scriptpath="$(dirname $(dirname $(readlink -f $0))/$(basename $0))"
+SCRIPTPATH="$(dirname $(dirname $(readlink -f $0))/$(basename $0))"
 
 apt-get update -y
 apt-get install upgrade -y
@@ -33,3 +33,5 @@ apt-get install gtk2-engines-murrine -y
 unzip ./assets/theme.zip -d /usr/share/themes/
 # Install included Avidity Total Dusk Reversed icon pack.
 unzip ./assets/icons.zip -d /usr/share/icons/
+
+# TODO - Set Avidty to active theme and icon pack.

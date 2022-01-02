@@ -17,7 +17,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this repository.  If not, see <https://www.gnu.org/licenses/>.
 
-scriptpath="$(dirname $(dirname $(readlink -f $0))/$(basename $0))"
+SCRIPTPATH="$(dirname $(dirname $(readlink -f $0))/$(basename $0))"
 HOMEDIR=$1
 
 # Make repos directory
@@ -33,6 +33,7 @@ cp ./assets/wallpaper.jpg $HOMEDIR/Pictures/Wallpaper
 gsettings set org.gnome.desktop.background picture-uri "file:///${HOMEDIR}/Pictures/Wallpaper/wallpaper.jpg"
 
 
+# TODO - Set Profile Picture
 # TODO - Gnome Tweaks Configuration
 
 # Git configuration

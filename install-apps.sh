@@ -18,8 +18,8 @@
 #    along with this repository.  If not, see <https://www.gnu.org/licenses/>.
 
 
-scriptpath="$(dirname $(dirname $(readlink -f $0))/$(basename $0))"
-homedir=/home/$1
+SCRIPTPATH="$(dirname $(dirname $(readlink -f $0))/$(basename $0))"
+HOMEDIR=/home/$1
 
 # Update System
 apt-get update
@@ -54,7 +54,7 @@ cd $HOMEDIR
 git clone https://github.com/pop-os/shell
 cd ./shell # CD into the repo clone
 make local-install
-cd $scriptpath # CD back to the source dir.
+cd SCRIPTPATH # CD back to the source dir.
 
 # Install Morpheus636's Desktop Utils
 cd $HOMEDIR
@@ -62,7 +62,7 @@ git clone https://github.com/Morpheus636/desktop-utils.git
 cd ./desktop-utils
 chmod +x ./install.sh
 ./install.sh -d $HOMEDIR/.loal/bin
-cd $scriptpath
+cd SCRIPTPATH
 
 # Add Deadsnakes PPA (For multiple python versions)
 add-apt-repository ppa:deadsnakes/ppa
