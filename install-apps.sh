@@ -19,6 +19,7 @@
 
 
 SCRIPTPATH="$(dirname $(dirname $(readlink -f $0))/$(basename $0))"
+USERNAME=$1
 HOMEDIR=/home/$1
 
 # Update System
@@ -42,6 +43,7 @@ apt-get install openvpn -y
 apt-get install filezilla -y
 apt-get install build-essential -y
 apt-get install transmission-gtk -y
+apt-get install tree -y
 
 # Easy Apps - Snap
 snap install pycharm-community --classic
@@ -106,6 +108,7 @@ chmod +x /usr/local/bin/docker-compose
 apt-get install libcanberra-gtk-module -y
 apt-get install default-jdk -y
 
+# Install Eclipse Java to $HOMEDIR/eclipse/cpp/eclipse/eclipse
 mkdir -p $HOMEDIR/.local/bin
 # Install Eclipse Cpp to $HOMEDIR/eclipse/cpp/eclipse/eclipse
 mkdir -p $HOMEDIR/eclipse/cpp/

@@ -18,7 +18,8 @@
 #    along with this repository.  If not, see <https://www.gnu.org/licenses/>.
 
 SCRIPTPATH="$(dirname $(dirname $(readlink -f $0))/$(basename $0))"
-HOMEDIR=$1
+USERNAME=$1
+HOMEDIR=/home/$1
 
 # Make repos directory
 mkdir -p $HOMEDIR/Documents/Repos
@@ -33,7 +34,10 @@ cp ./assets/wallpaper.jpg $HOMEDIR/Pictures/Wallpaper
 gsettings set org.gnome.desktop.background picture-uri "file:///${HOMEDIR}/Pictures/Wallpaper/wallpaper.jpg"
 
 
-# TODO - Set Profile Picture
+# Set Profile Picture
+cp $SCRIPTPATH/assets/pfp.png /var/lib/AccountsService/icons/$USERNAME
+
+
 # TODO - Gnome Tweaks Configuration
 
 # Git configuration

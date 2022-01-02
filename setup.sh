@@ -23,7 +23,7 @@ HOMEDIR=/home/$1
 
 # Run install apps
 chmod +x ./install-apps.sh
-./install-apps.sh $HOMEDIR
+./install-apps.sh $USERNAME
 
 # Run install theme 
 chmod +x ./install-theme.sh
@@ -31,7 +31,7 @@ chmod +x ./install-theme.sh
 
 # Run user config
 chmod +x ./user-config.sh
-./user-config.sh $HOMEDIR
+./user-config.sh $USERNAME
 
 # Ensure everything in the user's homedir is owned by the user.
 chown -R $USERNAME $HOMEDIR

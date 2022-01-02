@@ -11,9 +11,8 @@ Other scripts in this directory are run automatically by `setup.sh` and could ca
 2. Download this repository to somewhere in your user directory. `~/Documents` works well.
 3. `cd` into the directory
 4. OPTIONAL
-    - Place an OpenVPN config file (certs must be included in the file) called `client.ovpn` in the `config` directory
+    - Place an OpenVPN config file (certs must be included in the file) called `client.ovpn` in the `./assets/config/` directory
     OpenVPN configuration will just be skipped if the file does not exist.
-    - 
 5. `chmod +x ./setup.sh`
 6. `sudo ./setup.sh $USER`
 
@@ -56,7 +55,7 @@ which may not be listed here.
 - Thunderbird
 - OpenVPN Client (Optional - See Usage Instructions)
 - Morpheus636's Desktop Utils
-- FreeCAD
+- Tree
 ### PPAs
 - `ppa:deadsnakes/ppa`
 
