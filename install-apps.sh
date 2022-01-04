@@ -44,6 +44,9 @@ apt-get install filezilla -y
 apt-get install build-essential -y
 apt-get install transmission-gtk -y
 apt-get install tree -y
+apt-get install hexchat -y
+apt-get install gimp -y
+apt-get install rawtherapee -y
 
 # Easy Apps - Snap
 snap install pycharm-community --classic
@@ -133,5 +136,3 @@ chmod +x $HOMEDIR/.local/share/applications/eclipse-java.desktop
 # TODO - Install Git lfs
 
 # TODO - Install RawTherapee
-
-# TODO - Install GIMP

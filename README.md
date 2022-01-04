@@ -56,6 +56,9 @@ which may not be listed here.
 - OpenVPN Client (Optional - See Usage Instructions)
 - Morpheus636's Desktop Utils
 - Tree
+- HexChat
+- GIMP
+- RawTherapee
 ### PPAs
 - `ppa:deadsnakes/ppa`
 
