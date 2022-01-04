@@ -31,7 +31,7 @@ cp ./assets/config/.bash_aliases $HOMEDIR
 # Set wallpaper
 mkdir -p $HOMEDIR/Pictures/wallpaper
 cp ./assets/wallpaper.jpg $HOMEDIR/Pictures/Wallpaper
-gsettings set org.gnome.desktop.background picture-uri "file:///${HOMEDIR}/Pictures/Wallpaper/wallpaper.jpg"
+gsettings set org.gnome.desktop.background picture-uri "file:///${HOMEDIR}/Pictures/wallpaper/wallpaper.jpg"
 
 
 # Set Profile Picture
