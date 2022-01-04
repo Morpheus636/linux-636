@@ -50,7 +50,7 @@ apt-get install rawtherapee -y
 
 # Easy Apps - Snap
 snap install pycharm-community --classic
-snap install discord
+snap install discord # FIXME - Install from .deb?
 snap install thunderbird
 
 # Install Pop Shell
@@ -136,3 +136,5 @@ chmod +x $HOMEDIR/.local/share/applications/eclipse-java.desktop
 # TODO - Install Git lfs
 
 # TODO - Install RawTherapee
+
+# TODO - Install GIMP
