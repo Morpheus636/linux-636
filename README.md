@@ -4,8 +4,8 @@ A set of configuration files (dotfiles) and shell scripts for setting up my desk
 You're welcome to use this repo as a starting point for your own install scripts.
 
 # Usage
-__WARNING__ Only `setup.sh` should be run on it's own,. 
-Other scripts in this directory are run automatically by `setup.sh` and could cause problems if manually run.
+The following is the primary way to use this setup tool. Other scritps can be
+run manually, so see the documentation below for more specific info.
 
 1. Install Ubuntu 20.04 Desktop. Minimal edition should work fine.
 2. Download this repository to somewhere in your user directory. `~/Documents` works well.
@@ -24,18 +24,21 @@ You will need to do the following manually:
 - Sign into VSCode using your Microsoft account and enable sync.
 - Sign into PyCharm with your jetbrains account.
 
-# Scripts
-## setup.sh
+## Scripts/Modules
+### setup.sh
 The only script which should be run manually. 
 
 This runs all the other scripts.
 
 It should be run with sudo, and passed a username as the first argument.
 
-## install-apps.sh
-Installs the following. It also installs other dependencies (both explicitly and implicitly through apt)
-which may not be listed here.
-### Apps
+### install-apps.sh
+Installs the following. It also installs other dependencies (both explicitly 
+and implicitly through apt) which may not be listed here.
+
+Individual functions from this script can be `source`d to use them individually.
+See the documenation at the top of the file for more information on this.
+#### Apps
 - Git
 - Curl
 - Wget
@@ -59,20 +62,26 @@ which may not be listed here.
 - HexChat
 - GIMP
 - RawTherapee
-### PPAs
+#### PPAs
 - `ppa:deadsnakes/ppa`
 
-
-## install-theme.sh
+### install-theme.sh
 Installs the following themes and icon packs.
 - Avidity Total Dusk Theme (Included locally in Repo)
 - Avidity Total Dusk Suru Icon Pack (Reversed)
 
-## user-config.sh
+### user-config.sh
 - Creates a `Repos` directory within `~/Documents/`
 - Configures an OpenVPN client connection (place an openvpn config file in this directory after git cloning)
 
-## Copyright Notice
+Individual functions from this script can be `source`d to use them individually.
+See the documenation at the top of the file for more information on this.
+
+# Development Utilities
+The `./dev_tools/` directory contains scripts used to streamline development.
+None of them should be run by sudo, and they are all documented within themselves. For information on any of them, run `<scriptpath> --help`.
+
+# Copyright Notice
 © Copyright 2021 Josh Levin ([Morpheus636](https://github.com/morpheus636))
 
 This repository (and everything in it) is free software: you can redistribute it and/or modify
