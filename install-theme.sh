@@ -2,9 +2,6 @@
 ################################################################################
 # This script must be run as sudo, with the working dir set as the root
 # of the repo. It takes no arguments.
-
-# Ensure you run `sudo chown ./home/<username> <username>` after you run functions
-# To prevent files in your home directory from being owned by root.
 ################################################################################
 #    © Copyright 2021 Josh Levin (Morpheus636 - https://github.com/morpheus636)
 # 
