@@ -1,4 +1,11 @@
 #!/bin/bash
+################################################################################
+# This script must be run as sudo, with the working dir set as the root
+# of the repo. It takes no arguments.
+
+# Ensure you run `sudo chown ./home/<username> <username>` after you run functions
+# To prevent files in your home directory from being owned by root.
+################################################################################
 #    © Copyright 2021 Josh Levin (Morpheus636 - https://github.com/morpheus636)
 # 
 #    This file is part of Morpheus636's desktop-config repository.
@@ -17,7 +24,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this repository.  If not, see <https://www.gnu.org/licenses/>.
 
-SCRIPTPATH="$(dirname $(dirname $(readlink -f $0))/$(basename $0))"
+WORKING_DIR=$PWD
 
 apt-get update -y
 apt-get install upgrade -y
