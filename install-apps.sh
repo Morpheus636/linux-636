@@ -202,7 +202,7 @@ main(){
   install_docker
   install_eclipse_java
   install_eclipse_cpp
-  chown_back
+  chown $USERNAME $HOMEDIR
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
