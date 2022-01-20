@@ -1,4 +1,14 @@
 #!/bin/bash
+################################################################################
+# You can `source` this file to execute individual functions in it, but you need
+# to have your working directory set to the root of the repo, and you need to
+# pass $USER as an arg when you `source` it.
+
+# Functions must be run as sudo to work properly.
+
+# Ensure you run `sudo chown ./home/<username> <username>` after you run functions
+# To prevent files in your home directory from being owned by root.
+################################################################################
 #    © Copyright 2021 Josh Levin (Morpheus636 - https://github.com/morpheus636)
 # 
 #    This file is part of Morpheus636's desktop-config repository.
@@ -17,20 +27,28 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this repository.  If not, see <https://www.gnu.org/licenses/>.
 
-
-SCRIPTPATH="$(dirname $(dirname $(readlink -f $0))/$(basename $0))"
+WORKING_DIR=$PWD
 USERNAME=$1
 HOMEDIR=/home/$1
 
-apt-get update
-apt-get upgrade -y
-# Dependencies
-apt-get install git -y
-apt-get install curl -y
-apt-get install software-properties-common -y
-apt-get install apt-transport-https -y
-apt-get install wget -y
-apt-get install network-manager -y
+if [ $# -eq 0 ]
+  then
+    echo "You must pass \$USER as the only arg."
+    exit 1
+fi
+
+install_deps(){
+  apt-get update
+  apt-get upgrade -y
+  # Dependencies
+  apt-get install git -y
+  apt-get install curl -y
+  apt-get install software-properties-common -y
+  apt-get install apt-transport-https -y
+  apt-get install wget -y
+  apt-get install network-manager -y
+}
+
 
 install_apts(){
   # Easy Apps - Apt
@@ -64,7 +82,7 @@ install_pop_shell(){
   git clone https://github.com/pop-os/shell
   cd ./shell # CD into the repo clone
   make local-install
-  cd SCRIPTPATH # CD back to the source dir.
+  cd $WORKING_DIR # CD back to the source dir.
 }
 
 
@@ -75,7 +93,7 @@ install_desktop_utils(){
   cd ./desktop-utils
   chmod +x ./install.sh
   ./install.sh -d $HOMEDIR/.loal/bin
-  cd SCRIPTPATH
+  cd $WORKING_DIR
 }
 
 add_ppas(){
@@ -184,6 +202,7 @@ main(){
   install_docker
   install_eclipse_java
   install_eclipse_cpp
+  chown_back
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
