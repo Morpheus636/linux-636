@@ -4,6 +4,10 @@
 # to have your working directory set to the root of the repo, and you need to
 # pass $USER as an arg when you `source` it.
 
+# Dependencies may be missing if you haven't run this script (or setup.sh, which
+# runs this script automatically) already on this system.
+# run the install_deps function before running any other functions to prevent this.
+
 # Functions must be run as sudo to work properly.
 
 # Ensure you run `sudo chown ./home/<username> <username>` after you run functions
