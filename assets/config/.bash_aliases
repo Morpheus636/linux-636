@@ -11,3 +11,4 @@ alias whoowns="stat -c '%U'"
 alias would_you_kindly='sudo'
 alias please='sudo'
 alias just_fucking='sudo'
+alias this='python3 -m this'
