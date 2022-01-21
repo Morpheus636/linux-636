@@ -3,7 +3,7 @@
 # This script must be run as sudo, with the working dir set as the root
 # of the repo. It takes no arguments.
 ################################################################################
-#    © Copyright 2021 Josh Levin (Morpheus636 - https://github.com/morpheus636)
+#    © Copyright 2021-2022 Josh Levin (Morpheus636 - https://github.com/morpheus636)
 # 
 #    This file is part of Morpheus636's desktop-config repository.
 #

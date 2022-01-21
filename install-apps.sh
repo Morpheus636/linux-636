@@ -13,7 +13,7 @@
 # Ensure you run `sudo chown ./home/<username> <username>` after you run functions
 # To prevent files in your home directory from being owned by root.
 ################################################################################
-#    © Copyright 2021 Josh Levin (Morpheus636 - https://github.com/morpheus636)
+#    © Copyright 2021-2022 Josh Levin (Morpheus636 - https://github.com/morpheus636)
 # 
 #    This file is part of Morpheus636's desktop-config repository.
 #

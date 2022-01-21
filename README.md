@@ -82,7 +82,7 @@ The `./dev_tools/` directory contains scripts used to streamline development.
 None of them should be run by sudo, and they are all documented within themselves. For information on any of them, run `<scriptpath> --help`.
 
 # Copyright Notice
-© Copyright 2021 Josh Levin ([Morpheus636](https://github.com/morpheus636))
+© Copyright 2021-2022 Josh Levin ([Morpheus636](https://github.com/morpheus636))
 
 This repository (and everything in it) is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

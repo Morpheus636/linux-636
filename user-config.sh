@@ -13,7 +13,7 @@
 # Ensure you run `sudo chown <username> ./home/<username>` after you run functions
 # To prevent files in your home directory from being owned by root.
 ################################################################################
-#    © Copyright 2021 Josh Levin (Morpheus636 - https://github.com/morpheus636)
+#    © Copyright 2021-2022 Josh Levin (Morpheus636 - https://github.com/morpheus636)
 # 
 #    This file is part of Morpheus636's desktop-config repository.
 #
@@ -65,6 +65,10 @@ openvpn_config(){
   fi
 }
 
+setup_ssh(){
+  # TODO - Setup SSH
+}
+
 git_config(){
   # Git configuration
   cp ./assets/config/.gitconfig $HOMEDIR/
@@ -89,6 +93,7 @@ main(){
   set_wallpaper
   set_pfp
   openvpn_config
+  setup_ssh
   git_config
   bash_config
 
