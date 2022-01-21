@@ -67,6 +67,7 @@ openvpn_config(){
 
 setup_ssh(){
   # TODO - Setup SSH
+  echo
 }
 
 git_config(){
