@@ -16,6 +16,8 @@ run manually, so see the documentation below for more specific info.
 5. `chmod +x ./setup.sh`
 6. `sudo ./setup.sh $USER`
 
+To update configuration later on after changes in the git repo, run `sudo ./user-config.sh $USER`.
+
 ## Post-Script Manual Configuration
 Some changes cannot be made by the script due to limitations of the software involved, or authentication requirements. 
 
