@@ -10,7 +10,7 @@
 
 # Functions must be run as sudo to work properly.
 
-# Ensure you run `sudo chown ./home/<username> <username>` after you run functions
+# Ensure you run `sudo chown -R /home/<username> <username>` after you run functions
 # To prevent files in your home directory from being owned by root.
 ################################################################################
 #    © Copyright 2021-2022 Josh Levin (Morpheus636 - https://github.com/morpheus636)
@@ -206,7 +206,7 @@ main(){
   install_docker
   install_eclipse_java
   install_eclipse_cpp
-  chown $USERNAME $HOMEDIR
+  chown -R $USERNAME $HOMEDIR
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
