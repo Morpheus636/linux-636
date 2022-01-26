@@ -124,8 +124,8 @@ install_freecad(){
 
 install_chrome(){
   # Install Chrome
-  add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main" -y
   wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+  add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main" -y
   apt-get update
   apt-get -qy install google-chrome-stable
 }
