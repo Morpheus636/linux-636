@@ -23,15 +23,15 @@
 
 WORKING_DIR=$PWD
 
-apt-get update -y
-apt-get upgrade -y
+apt-get update -qy
+apt-get upgrade -qy
 
 # Ensure Gnome Tweaks is installed.
-apt-get install gnome-tweaks -y
-apt-get install gnome-shell-extensions -y
+apt-get install gnome-tweaks -qy
+apt-get install gnome-shell-extensions -qy
 
 # Install Dep for Avidity themes.
-apt-get install gtk2-engines-murrine -y
+apt-get install gtk2-engines-murrine -qy
 
 # Install included Avidity Total Dusk theme.
 unzip ./assets/theme.zip -q -d /usr/share/themes/

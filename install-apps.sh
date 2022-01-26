@@ -43,31 +43,31 @@ fi
 
 install_deps(){
   apt-get update
-  apt-get upgrade -y
+  apt-get upgrade -qy
   # Dependencies
-  apt-get install git -y
-  apt-get install curl -y
-  apt-get install software-properties-common -y
-  apt-get install apt-transport-https -y
-  apt-get install wget -y
-  apt-get install network-manager -y
+  apt-get install git -qy
+  apt-get install curl -qy
+  apt-get install software-properties-common -qy
+  apt-get install apt-transport-https -qy
+  apt-get install wget -qy
+  apt-get install network-manager -qy
 }
 
 
 install_apts(){
   # Easy Apps - Apt
-  apt-get install gnome-tweaks -y
-  apt-get install gnome-shell-extensions -y
-  apt-get install vim -y
-  apt-get install zeal -y
-  apt-get install openvpn -y
-  apt-get install filezilla -y
-  apt-get install build-essential -y
-  apt-get install transmission-gtk -y
-  apt-get install tree -y
-  apt-get install hexchat -y
-  apt-get install gimp -y
-  apt-get install rawtherapee -y
+  apt-get install gnome-tweaks -qy
+  apt-get install gnome-shell-extensions -qy
+  apt-get install vim -qy
+  apt-get install zeal -qy
+  apt-get install openvpn -qy
+  apt-get install filezilla -qy
+  apt-get install build-essential -qy
+  apt-get install transmission-gtk -qy
+  apt-get install tree -qy
+  apt-get install hexchat -qy
+  apt-get install gimp -qy
+  apt-get install rawtherapee -qy
 }
 
 
@@ -81,7 +81,7 @@ install_snaps(){
 
 install_pop_shell(){
   # Install Pop Shell
-  apt-get install node-typescript -y make git
+  apt-get install node-typescript -qy make git
   cd $HOMEDIR
   git clone https://github.com/pop-os/shell
   cd ./shell # CD into the repo clone
@@ -110,7 +110,7 @@ add_ppas(){
 install_node(){
   # Install NodeJS 16
   curl -sL https://deb.nodesource.com/setup_16.x | bash -
-  apt-get install nodejs -y
+  apt-get install nodejs -qy
 
 }
 
@@ -118,8 +118,8 @@ install_freecad(){
   # Install FreeCAD
   add-apt-repository ppa:freecad-maintainers/freecad-stable -y
   apt-get update
-  apt-get install freecad -y
-  apt-get upgrade -y
+  apt-get install freecad -qy
+  apt-get upgrade -qy
 }
 
 install_chrome(){
@@ -127,7 +127,7 @@ install_chrome(){
   add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main" -y
   wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
   apt-get update
-  apt-get install google-chrome-stable -y
+  apt-get install google-chrome-stable -qy
 }
 
 install_vscode(){
@@ -135,14 +135,14 @@ install_vscode(){
   wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | apt-key add -
   add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" -y
   apt-get update
-  apt-get install code -y
+  apt-get install code -qy
 }
 
 install_docker(){
   # Install Docker and Compose
-  apt-get install ca-certificates -y
-  apt-get install gnupg -y
-  apt-get install lsb-release
+  apt-get install ca-certificates -qy
+  apt-get install gnupg -qy
+  apt-get install lsb-release -qy
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
   echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
   apt-get update
@@ -153,8 +153,8 @@ install_docker(){
 
 install_eclipse_java(){
   # Dependency
-  apt-get install libcanberra-gtk-module -y
-  apt-get install default-jdk -y
+  apt-get install libcanberra-gtk-module -qy
+  apt-get install default-jdk -qy
 
   mkdir -p $HOMEDIR/.local/bin
   
@@ -171,8 +171,8 @@ install_eclipse_java(){
 
 install_eclipse_cpp(){
   # Dependency
-  apt-get install libcanberra-gtk-module -y
-  apt-get install default-jdk -y
+  apt-get install libcanberra-gtk-module -qy
+  apt-get install default-jdk -qy
 
   mkdir -p $HOMEDIR/.local/bin
 
