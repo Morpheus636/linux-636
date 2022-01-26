@@ -85,7 +85,7 @@ install_pop_shell(){
   cd $HOMEDIR
   git clone https://github.com/pop-os/shell
   cd ./shell # CD into the repo clone
-  make local-install
+  yes | make local-install
   cd $WORKING_DIR # CD back to the source dir.
 }
 

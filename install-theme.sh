@@ -24,7 +24,7 @@
 WORKING_DIR=$PWD
 
 apt-get update -y
-apt-get install upgrade -y
+apt-get upgrade -y
 
 # Ensure Gnome Tweaks is installed.
 apt-get install gnome-tweaks -y
@@ -34,8 +34,8 @@ apt-get install gnome-shell-extensions -y
 apt-get install gtk2-engines-murrine -y
 
 # Install included Avidity Total Dusk theme.
-unzip -q ./assets/theme.zip -q -d /usr/share/themes/
+unzip ./assets/theme.zip -q -d /usr/share/themes/
 # Install included Avidity Total Dusk Reversed icon pack.
-unzip -q ./assets/icons.zip -d /usr/share/icons/
+unzip ./assets/icons.zip -q -d /usr/share/icons/
 
 # TODO - Set Avidty to active theme and icon pack.

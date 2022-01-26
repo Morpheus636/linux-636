@@ -49,7 +49,7 @@ setup_fs(){
 set_wallpaper(){
   # Set wallpaper
   mkdir -p $HOMEDIR/Pictures/Wallpaper
-  cp ./assets/wallpaper.jpg $HOMEDIR/Pictures/Wallpaper
+  cp ./assets/wallpaper.jpg $HOMEDIR/Pictures/Wallpaper/wallpaper.jpg
   gsettings set org.gnome.desktop.background picture-uri "file:///${HOMEDIR}/Pictures/Wallpaper/wallpaper.jpg"
 }
 
@@ -85,7 +85,7 @@ bash_config(){
 gnome_config(){
   # Gnome and Gnome Tweaks Configuration
   # TODO - Most of the config.
-  gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
+  #gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 }
 
 # TODO - Install Zeal Docsets
