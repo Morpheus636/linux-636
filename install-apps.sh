@@ -92,6 +92,7 @@ install_pop_shell(){
 
 install_desktop_utils(){
   # Install Morpheus636's Desktop Utils
+  mkdir -p $HOMEDIR/.local/bin
   cd $HOMEDIR
   git clone https://github.com/Morpheus636/desktop-utils.git
   cd ./desktop-utils
@@ -102,7 +103,7 @@ install_desktop_utils(){
 
 add_ppas(){
   # Add Deadsnakes PPA (For multiple python versions)
-  add-apt-repository ppa:deadsnakes/ppa
+  add-apt-repository ppa:deadsnakes/ppa -y
 
 }
 
@@ -115,7 +116,7 @@ install_node(){
 
 install_freecad(){
   # Install FreeCAD
-  add-apt-repository ppa:freecad-maintainers/freecad-stable
+  add-apt-repository ppa:freecad-maintainers/freecad-stable -y
   apt-get update
   apt-get install freecad -y
   apt-get upgrade -y
@@ -123,7 +124,7 @@ install_freecad(){
 
 install_chrome(){
   # Install Chrome
-  add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
+  add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main" -y
   wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
   apt-get update
   apt-get install google-chrome-stable -y
@@ -132,7 +133,7 @@ install_chrome(){
 install_vscode(){
   # Install VSCode
   wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | apt-key add -
-  add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+  add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" -y
   apt-get update
   apt-get install code -y
 }
