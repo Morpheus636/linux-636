@@ -56,6 +56,7 @@ set_wallpaper(){
 set_pfp(){
   # Set Profile Picture
   cp ./assets/pfp.png /var/lib/AccountsService/icons/$USERNAME
+  #TODO make sure icon= in /var/lib/AccountsService/users/$USERNAME is set to /var/lib/AccountsService/icons/$USERNAME and not /home/$USERNAME/.face
 }
 
 openvpn_config(){
