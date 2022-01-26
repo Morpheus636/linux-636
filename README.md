@@ -1,7 +1,10 @@
 # Desktop Config
 A set of configuration files (dotfiles) and shell scripts for setting up my desktop OS installations. Written for Ubuntu 20.04 LTS.
 
-You're welcome to use this repo as a starting point for your own install scripts.
+You're welcome to use this repo as a starting point for your own install scripts. 
+
+Releases that are not marked as pre-releases should be considered stable, but nothing in this repository comes with any warranty,
+implied or otherwise (see the license and copyright notice for more).
 
 # Usage
 The following is the primary way to use this setup tool. Other scritps can be
