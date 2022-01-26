@@ -82,8 +82,11 @@ bash_config(){
   cp ./assets/config/.bash_aliases $HOMEDIR
 }
 
-
-# TODO - Gnome Tweaks Configuration
+gnome_config(){
+  # Gnome and Gnome Tweaks Configuration
+  # TODO - Most of the config.
+  gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
+}
 
 # TODO - Install Zeal Docsets
 
@@ -98,6 +101,7 @@ main(){
   setup_ssh
   git_config
   bash_config
+  gnome_config
 
   chown -R $USERNAME $HOMEDIR
 }
