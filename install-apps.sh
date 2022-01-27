@@ -6,7 +6,11 @@
 
 # Dependencies may be missing if you haven't run this script (or setup.sh, which
 # runs this script automatically) already on this system.
-# run the install_deps function before running any other functions to prevent this.
+# run the install_deps function before running any other functions to prevent this
+# (although there might still be deps for certain functions that don't get installed
+# by this function since this isn't really a supported use case.
+# Everything works when run together in ./setup.sh or just by directly running this
+# script.)
 
 # Functions must be run as sudo to work properly.
 
