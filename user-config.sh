@@ -8,7 +8,7 @@
 # runs this script automatically) already on this system. Run the install_deps
 # function from install-apps.sh before running any other functions to prevent this.
 
-# Functions must be run as sudo to work properly.
+# Functions must NOT be run as sudo.
 
 # Ensure you run `sudo chown -R <username> /home/<username>` after you run functions
 # To prevent files in your home directory from being owned by root.

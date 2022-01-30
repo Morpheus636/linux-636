@@ -31,7 +31,7 @@ chmod +x ./install-theme.sh
 
 # Run user config
 chmod +x ./user-config.sh
-./user-config.sh $USERNAME
+sudo -u $USER ./user-config.sh $USERNAME
 
 # Ensure everything in the user's homedir is owned by the user.
 chown -R $USERNAME $HOMEDIR
