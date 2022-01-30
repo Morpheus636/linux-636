@@ -6,3 +6,6 @@ client.conf
 *.ovpn
 
 tmp*
+
+# Logs
+*.log

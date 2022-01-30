@@ -20,18 +20,24 @@
 SCRIPTPATH="$(dirname $(dirname $(readlink -f $0))/$(basename $0))"
 USERNAME=$1
 HOMEDIR=/home/$1
+LOGFILE=$SCRIPTPATH/setup.log
+touch $LOGFILE
 
-# Run install apps
-chmod +x ./install-apps.sh
-./install-apps.sh $USERNAME
+main(){
+  # Run install apps
+  chmod +x ./install-apps.sh
+  ./install-apps.sh $USERNAME
 
-# Run install theme 
-chmod +x ./install-theme.sh
-./install-theme.sh
+  # Run install theme 
+  chmod +x ./install-theme.sh
+  ./install-theme.sh
 
 # Run user config
 chmod +x ./user-config.sh
 sudo -u $USER ./user-config.sh $USERNAME
 
-# Ensure everything in the user's homedir is owned by the user.
-chown -R $USERNAME $HOMEDIR
+  # Ensure everything in the user's homedir is owned by the user.
+  chown -R $USERNAME $HOMEDIR
+}
+
+main | tee $LOGFILE
