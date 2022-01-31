@@ -5,6 +5,7 @@ alias update='sudo apt update'
 alias upgrade='sudo apt upgrade'
 alias network-manager='echo Its nmcli, idiot.'
 alias whoowns="stat -c '%U'"
+alias localpath="export PATH=$PATH:$(pwd)"
 
 
 # Fun
