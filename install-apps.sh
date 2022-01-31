@@ -80,6 +80,7 @@ install_snaps(){
   snap install pycharm-community --classic
   snap install discord # FIXME - Install from .deb?
   snap install thunderbird
+  snap install libreoffice
 }
 
 
