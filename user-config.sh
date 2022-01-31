@@ -48,9 +48,10 @@ setup_fs(){
 
 set_wallpaper(){
   # Set wallpaper
-  mkdir -p $HOMEDIR/Pictures/Wallpaper
-  cp ./assets/wallpaper.jpg $HOMEDIR/Pictures/Wallpaper/wallpaper.jpg
-  gsettings set org.gnome.desktop.background picture-uri "file:///${HOMEDIR}/Pictures/Wallpaper/wallpaper.jpg"
+  rm -f $HOMEDIR/Pictures/wallpaper/wallpaper.jpg
+  mkdir -p $HOMEDIR/Pictures/wallpaper
+  cp ./assets/wallpaper.jpg $HOMEDIR/Pictures/wallpaper/
+  gsettings set org.gnome.desktop.background picture-uri "file:///${HOMEDIR}/Pictures/wallpaper/wallpaper.jpg"
 }
 
 set_pfp(){
