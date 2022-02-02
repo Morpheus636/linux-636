@@ -28,6 +28,7 @@ You will need to do the following manually:
 - Sign into Chrome. It should sync your config from other devices manually
 - Sign into VSCode using your Microsoft account and enable sync.
 - Sign into PyCharm with your jetbrains account.
+- Sign into Telegram
 
 ## Scripts/Modules
 ### setup.sh

@@ -81,6 +81,7 @@ install_snaps(){
   snap install discord # FIXME - Install from .deb?
   snap install thunderbird
   snap install libreoffice
+  snap install thunderbird
 }
 
 
