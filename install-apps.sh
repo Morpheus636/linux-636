@@ -82,6 +82,7 @@ install_snaps(){
   snap install thunderbird
   snap install libreoffice
   snap install thunderbird
+  snap install remmina
 }
 
 
