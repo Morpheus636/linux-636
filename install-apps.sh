@@ -70,17 +70,15 @@ install_apts(){
   apt-get -qy install transmission-gtk 
   apt-get -qy install tree 
   apt-get -qy install hexchat 
-  apt-get -qyinstall gimp
+  apt-get -qy install gimp
   apt-get -qy install rawtherapee 
+  apt-get -qy install libreoffice
 }
 
 
 install_snaps(){
   # Easy Apps - Snap
   snap install pycharm-community --classic
-  snap install discord # FIXME - Install from .deb?
-  snap install thunderbird
-  snap install libreoffice
   snap install thunderbird
   snap install remmina
 }
@@ -197,9 +195,8 @@ install_eclipse_cpp(){
 
 # TODO - Install Git lfs
 
-# TODO - Install RawTherapee
+# TODO - Install Discord
 
-# TODO - Install GIMP
 
 main(){
   install_apts
