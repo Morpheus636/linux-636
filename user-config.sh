@@ -1,17 +1,13 @@
 #!/bin/bash
 ################################################################################
 # You can `source` this file to execute individual functions in it, but you need
-# to have your working directory set to the root of the repo, and you need to
-# pass $USER as an arg when you `source` it.
+# to have your working directory set to the root of the repo.
 
 # Dependencies may be missing if you haven't run this script (or setup.sh, which
 # runs this script automatically) already on this system. Run the install_deps
 # function from install-apps.sh before running any other functions to prevent this.
 
 # Functions must NOT be run as sudo.
-
-# Ensure you run `sudo chown -R <username> /home/<username>` after you run functions
-# To prevent files in your home directory from being owned by root.
 ################################################################################
 #    © Copyright 2021-2022 Josh Levin (Morpheus636 - https://github.com/morpheus636)
 # 
@@ -31,33 +27,23 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this repository.  If not, see <https://www.gnu.org/licenses/>.
 
-WORKING_DIR=$PWD
-USERNAME=$1
-HOMEDIR=/home/$1
-
-if [ $# -eq 0 ]
-  then
-    echo "You must pass \$USER as the only arg."
-    exit 1
-fi
-
 setup_fs(){
   # Make repos directories
-  mkdir -p $HOMEDIR/src
+  mkdir -p $HOME/src
 }
 
 set_wallpaper(){
   # Set wallpaper
-  rm -f $HOMEDIR/Pictures/wallpaper/wallpaper.jpg
-  mkdir -p $HOMEDIR/Pictures/wallpaper
-  cp ./assets/wallpaper.jpg $HOMEDIR/Pictures/wallpaper/
-  gsettings set org.gnome.desktop.background picture-uri "file:///${HOMEDIR}/Pictures/wallpaper/wallpaper.jpg"
+  rm -f $HOME/Pictures/wallpaper/wallpaper.jpg
+  mkdir -p $HOME/Pictures/wallpaper
+  cp ./assets/wallpaper.jpg $HOME/Pictures/wallpaper/
+  gsettings set org.gnome.desktop.background picture-uri "file:///${HOME}/Pictures/wallpaper/wallpaper.jpg"
 }
 
 set_pfp(){
   # Set Profile Picture
-  cp ./assets/pfp.png /var/lib/AccountsService/icons/$USERNAME
-  #TODO make sure icon= in /var/lib/AccountsService/users/$USERNAME is set to /var/lib/AccountsService/icons/$USERNAME and not /home/$USERNAME/.face
+  cp ./assets/pfp.png /var/lib/AccountsService/icons/$USER
+  #TODO make sure icon= in /var/lib/AccountsService/users/$USER is set to /var/lib/AccountsService/icons/$USER and not /home/$USER/.face
 }
 
 openvpn_config(){
@@ -74,13 +60,13 @@ setup_ssh(){
 
 git_config(){
   # Git configuration
-  cp ./assets/config/.gitconfig $HOMEDIR/
+  cp ./assets/config/.gitconfig $HOME/
 }
 
 bash_config(){
   # BASH Configuration
-  cp ./assets/config/.bashrc $HOMEDIR
-  cp ./assets/config/.bash_aliases $HOMEDIR
+  cp ./assets/config/.bashrc $HOME
+  cp ./assets/config/.bash_aliases $HOME
 }
 
 gnome_config(){
@@ -104,8 +90,6 @@ main(){
   git_config
   bash_config
   gnome_config
-
-  chown -R $USERNAME $HOMEDIR
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
