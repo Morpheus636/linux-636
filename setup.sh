@@ -29,7 +29,7 @@ main(){
   ./install-apps-sudo.sh $USERNAME
 
   chmod +x ./install-apps-user.sh
-  su $USER -c './install-apps-user.sh'
+  su $USERNAME -c './install-apps-user.sh'
 
   # Run install theme 
   chmod +x ./install-theme.sh
@@ -37,7 +37,7 @@ main(){
 
   # Run user config
   chmod +x ./user-config.sh
-  su $USER -c './user-config.sh'
+  su $USERNAME -c './user-config.sh'
 
   # Ensure everything in the user's homedir is owned by the user.
   chown -R $USERNAME $HOMEDIR
