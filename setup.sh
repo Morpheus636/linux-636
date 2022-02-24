@@ -25,8 +25,11 @@ touch $LOGFILE
 
 main(){
   # Run install apps
-  chmod +x ./install-apps.sh
+  chmod +x ./install-apps-sudo.sh
   ./install-apps.sh $USERNAME
+
+  chmod +x ./install-apps-user.sh
+  su $USER -c './install-apps-user.sh'
 
   # Run install theme 
   chmod +x ./install-theme.sh
@@ -34,7 +37,7 @@ main(){
 
   # Run user config
   chmod +x ./user-config.sh
-  su $USER -c "./user-config.sh"
+  su $USER -c './user-config.sh'
 
   # Ensure everything in the user's homedir is owned by the user.
   chown -R $USERNAME $HOMEDIR
