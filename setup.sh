@@ -43,4 +43,4 @@ main(){
   chown -R $USERNAME $HOMEDIR
 }
 
-main | tee $LOGFILE
+main 2>&1| tee $LOGFILE
