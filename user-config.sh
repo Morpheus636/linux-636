@@ -54,8 +54,7 @@ openvpn_config(){
 }
 
 setup_ssh(){
-  # TODO - Setup SSH
-  echo
+  yes "" | ssh-keygen -t rsa
 }
 
 git_config(){
@@ -73,10 +72,12 @@ gnome_config(){
   # Gnome and Gnome Tweaks Configuration
   # TODO - Most of the config.
   #gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
-  echo
 }
 
-# TODO - Install Zeal Docsets
+install_zeal_docsets(){
+  # Install Zeal Docsets
+  zeal-cli install C++ CMake CSS Django JavaScript Python3 React
+}
 
 # TODO - Thunderbird Configuration
 
@@ -94,4 +95,4 @@ main(){
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   main "$@"
-fi
+
