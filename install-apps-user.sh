@@ -32,7 +32,7 @@
 install_pop_shell(){
   # Install Pop Shell
   apt-get -qy install node-typescript
-  cd $HOMEDIR
+  cd $HOME
   git clone https://github.com/morpheus636/pop-shell.git
   cd ./pop-shell # CD into the repo clone
   yes | make local-install
@@ -41,12 +41,12 @@ install_pop_shell(){
 
 install_desktop_utils(){
   # Install Morpheus636's Desktop Utils
-  mkdir -p $HOMEDIR/.local/bin
-  cd $HOMEDIR
+  mkdir -p $HOME/.local/bin
+  cd $HOME
   git clone https://github.com/Morpheus636/desktop-utils.git
   cd ./desktop-utils
   chmod +x ./install.sh
-  ./install.sh -d $HOMEDIR/.loal/bin
+  ./install.sh -d $HOME/.local/bin
   cd $WORKING_DIR
 }
 
@@ -64,29 +64,29 @@ install_zeal_cli(){
 }
 
 install_eclipse_java(){
-  # Install Eclipse Java to $HOMEDIR/eclipse/java/eclipse/eclipse
-  mkdir -p $HOMEDIR/eclipse/java/
-  wget https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2021-09/R/eclipse-java-2021-09-R-linux-gtk-x86_64.tar.gz -O - | tar -xz -C $HOMEDIR/eclipse/java/
-  # Symlink Eclipse Java to $HOMEDIR/bin/eclipse-java
-  mkdir -p $HOMEDIR/.local/bin
-  ln -s  $HOMEDIR/eclipse/java/eclipse/eclipse  $HOMEDIR/.local/bin/eclipse-java
+  # Install Eclipse Java to $HOME/eclipse/java/eclipse/eclipse
+  mkdir -p $HOME/eclipse/java/
+  wget https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2021-09/R/eclipse-java-2021-09-R-linux-gtk-x86_64.tar.gz -O - | tar -xz -C $HOME/eclipse/java/  # FIXME - console spam
+  # Symlink Eclipse Java to $HOME/bin/eclipse-java
+  mkdir -p $HOME/.local/bin
+  ln -s  $HOME/eclipse/java/eclipse/eclipse  $HOME/.local/bin/eclipse-java
   # Copy the .desktop file for eclipse java to add it to the applications menu
-  cp ./assets/eclipse/eclipse-java.desktop $HOMEDIR/.local/share/applications/eclipse-java.desktop
-  sed -i "/s/HOMEDIR/$HOMEDIR/g" $HOMEDIR/.local/share/applications/eclipse-java.desktop
-  chmod +x $HOMEDIR/.local/share/applications/eclipse-java.desktop
+  cp ./assets/eclipse/eclipse-java.desktop $HOME/.local/share/applications/eclipse-java.desktop
+  sed -i "/s/HOME/$HOME/g" $HOME/.local/share/applications/eclipse-java.desktop
+  chmod +x $HOME/.local/share/applications/eclipse-java.desktop
 }
 
 install_eclipse_cpp(){
-  # Install Eclipse Cpp to $HOMEDIR/eclipse/cpp/eclipse/eclipse
-  mkdir -p $HOMEDIR/eclipse/cpp/
-  wget https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2021-09/R/eclipse-cpp-2021-09-R-linux-gtk-x86_64.tar.gz -O - | tar -xz -C $HOMEDIR/eclipse/cpp/
-  # Symlink Eclipse Cpp to $HOMEDIR/bin/eclipse-cpp
-  mkdir -p $HOMEDIR/.local/bin
-  ln -s  $HOMEDIR/eclipse/cpp/eclipse/eclipse  $HOMEDIR/.local/bin/eclipse-cpp
+  # Install Eclipse Cpp to $HOME/eclipse/cpp/eclipse/eclipse
+  mkdir -p $HOME/eclipse/cpp/
+  wget https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2021-09/R/eclipse-cpp-2021-09-R-linux-gtk-x86_64.tar.gz -O - | tar -xz -C $HOME/eclipse/cpp/  # FIXME - console spam
+  # Symlink Eclipse Cpp to $HOME/bin/eclipse-cpp
+  mkdir -p $HOME/.local/bin
+  ln -s  $HOME/eclipse/cpp/eclipse/eclipse  $HOME/.local/bin/eclipse-cpp
   # Add eclipse cpp to the applicaitons menu
-  cp ./assets/eclipse/eclipse-cpp.desktop $HOMEDIR/.local/share/applications/eclipse-cpp.desktop
-  sed -i "/s/HOMEDIR/$HOMEDIR/g" $HOMEDIR/.local/share/applications/eclipse-cpp.desktop
-  chmod +x $HOMEDIR/.local/share/applications/eclipse-cpp.desktop
+  cp ./assets/eclipse/eclipse-cpp.desktop $HOME/.local/share/applications/eclipse-cpp.desktop
+  sed -i "/s/HOME/$HOME/g" $HOME/.local/share/applications/eclipse-cpp.desktop
+  chmod +x $HOME/.local/share/applications/eclipse-cpp.desktop
 }
 
 

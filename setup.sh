@@ -26,7 +26,7 @@ touch $LOGFILE
 main(){
   # Run install apps
   chmod +x ./install-apps-sudo.sh
-  ./install-apps.sh $USERNAME
+  ./install-apps-sudo.sh $USERNAME
 
   chmod +x ./install-apps-user.sh
   su $USER -c './install-apps-user.sh'
