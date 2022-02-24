@@ -66,7 +66,7 @@ install_zeal_cli(){
 install_eclipse_java(){
   # Install Eclipse Java to $HOME/eclipse/java/eclipse/eclipse
   mkdir -p $HOME/eclipse/java/
-  wget https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2021-09/R/eclipse-java-2021-09-R-linux-gtk-x86_64.tar.gz -O - | tar -xz -C $HOME/eclipse/java/  # FIXME - console spam
+  wget https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2021-09/R/eclipse-java-2021-09-R-linux-gtk-x86_64.tar.gz -q -O - | tar -xz -C $HOME/eclipse/java/
   # Symlink Eclipse Java to $HOME/bin/eclipse-java
   mkdir -p $HOME/.local/bin
   ln -s  $HOME/eclipse/java/eclipse/eclipse  $HOME/.local/bin/eclipse-java
@@ -79,7 +79,7 @@ install_eclipse_java(){
 install_eclipse_cpp(){
   # Install Eclipse Cpp to $HOME/eclipse/cpp/eclipse/eclipse
   mkdir -p $HOME/eclipse/cpp/
-  wget https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2021-09/R/eclipse-cpp-2021-09-R-linux-gtk-x86_64.tar.gz -O - | tar -xz -C $HOME/eclipse/cpp/  # FIXME - console spam
+  wget https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2021-09/R/eclipse-cpp-2021-09-R-linux-gtk-x86_64.tar.gz -q -O - | tar -xz -C $HOME/eclipse/cpp/
   # Symlink Eclipse Cpp to $HOME/bin/eclipse-cpp
   mkdir -p $HOME/.local/bin
   ln -s  $HOME/eclipse/cpp/eclipse/eclipse  $HOME/.local/bin/eclipse-cpp
