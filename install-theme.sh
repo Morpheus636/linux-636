@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################################
-# This script must be run as sudo, with the working dir set as the root
+# This script must be run as sudo. The working dir should be set at the root
 # of the repo. It takes no arguments.
 ################################################################################
 #    © Copyright 2021-2022 Josh Levin (Morpheus636 - https://github.com/morpheus636)
@@ -37,5 +37,3 @@ apt-get install gtk2-engines-murrine -qy
 unzip -q ./assets/theme.zip -d /usr/share/themes/
 # Install included Avidity Total Dusk Reversed icon pack.
 unzip -q ./assets/icons.zip -d /usr/share/icons/
-
-# TODO - Set Avidty to active theme and icon pack.

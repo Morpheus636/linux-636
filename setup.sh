@@ -25,19 +25,22 @@ touch $LOGFILE
 
 main(){
   # Run install apps
-  chmod +x ./install-apps.sh
-  ./install-apps.sh $USERNAME
+  chmod +x ./install-apps-sudo.sh
+  ./install-apps-sudo.sh $USERNAME
+
+  chmod +x ./install-apps-user.sh
+  su $USERNAME -c './install-apps-user.sh'
 
   # Run install theme 
   chmod +x ./install-theme.sh
   ./install-theme.sh
 
-# Run user config
-chmod +x ./user-config.sh
-sudo -u $USER ./user-config.sh $USERNAME
+  # Run user config
+  chmod +x ./user-config.sh
+  su $USERNAME -c './user-config.sh'
 
   # Ensure everything in the user's homedir is owned by the user.
   chown -R $USERNAME $HOMEDIR
 }
 
-main | tee $LOGFILE
+main 2>&1| tee $LOGFILE

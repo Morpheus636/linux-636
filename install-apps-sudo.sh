@@ -2,20 +2,17 @@
 ################################################################################
 # You can `source` this file to execute individual functions in it, but you need
 # to have your working directory set to the root of the repo, and you need to
-# pass $USER as an arg when you `source` it.
+# pass $USER as an arg when you `source` it. Everything must be run as root to
+# work properly.
 
 # Dependencies may be missing if you haven't run this script (or setup.sh, which
 # runs this script automatically) already on this system.
-# run the install_deps function before running any other functions to prevent this
-# (although there might still be deps for certain functions that don't get installed
-# by this function since this isn't really a supported use case.
+# Run the install_deps function to prevent this.
 # Everything works when run together in ./setup.sh or just by directly running this
-# script.)
+# script.
 
-# Functions must be run as sudo to work properly.
-
-# Ensure you run `sudo chown -R /home/<username> <username>` after you run functions
-# To prevent files in your home directory from being owned by root.
+# Ensure you run `sudo chown -R /home/<username> <username>` after you run this
+# to prevent files in your home directory from being owned by root.
 ################################################################################
 #    © Copyright 2021-2022 Josh Levin (Morpheus636 - https://github.com/morpheus636)
 # 
@@ -50,11 +47,14 @@ install_deps(){
   apt-get -qy upgrade 
   # Dependencies
   apt-get -qy install git 
+  apt-get -qy install make
   apt-get -qy install curl 
   apt-get -qy install software-properties-common 
   apt-get -qy install apt-transport-https 
   apt-get -qy install wget 
   apt-get -qy install network-manager 
+  apt-get -qy install libcanberra-gtk-module 
+  apt-get -qy install default-jdk 
 }
 
 
@@ -70,42 +70,20 @@ install_apts(){
   apt-get -qy install transmission-gtk 
   apt-get -qy install tree 
   apt-get -qy install hexchat 
-  apt-get -qyinstall gimp
+  apt-get -qy install gimp
   apt-get -qy install rawtherapee 
+  apt-get -qy install libreoffice
+  apt-get -qy install usb-creator-gtk
 }
 
 
 install_snaps(){
   # Easy Apps - Snap
   snap install pycharm-community --classic
-  snap install discord # FIXME - Install from .deb?
   snap install thunderbird
-  snap install libreoffice
-  snap install thunderbird
+  snap install remmina
 }
 
-
-install_pop_shell(){
-  # Install Pop Shell
-  apt-get -qy install node-typescript make git
-  cd $HOMEDIR
-  git clone https://github.com/pop-os/shell
-  cd ./shell # CD into the repo clone
-  yes | make local-install
-  cd $WORKING_DIR # CD back to the source dir.
-}
-
-
-install_desktop_utils(){
-  # Install Morpheus636's Desktop Utils
-  mkdir -p $HOMEDIR/.local/bin
-  cd $HOMEDIR
-  git clone https://github.com/Morpheus636/desktop-utils.git
-  cd ./desktop-utils
-  chmod +x ./install.sh
-  ./install.sh -d $HOMEDIR/.loal/bin
-  cd $WORKING_DIR
-}
 
 add_ppas(){
   # Add Deadsnakes PPA (For multiple python versions)
@@ -113,12 +91,22 @@ add_ppas(){
 
 }
 
+
 install_node(){
   # Install NodeJS 16
   curl -sL https://deb.nodesource.com/setup_16.x | bash -
   apt-get -qy install nodejs
 
 }
+
+
+install_python(){
+  apt-get -qy install python3.7
+  apt-get -qy install python3.8
+  apt-get -qy install python3.9
+  apt-get -qy install python3.10
+}
+
 
 install_freecad(){
   # Install FreeCAD
@@ -157,62 +145,23 @@ install_docker(){
   chmod +x /usr/local/bin/docker-compose
 }
 
-install_eclipse_java(){
-  # Dependency
-  apt-get -qy install libcanberra-gtk-module 
-  apt-get -qy install default-jdk 
-
-  mkdir -p $HOMEDIR/.local/bin
-  
-  # Install Eclipse Java to $HOMEDIR/eclipse/java/eclipse/eclipse
-  mkdir -p $HOMEDIR/eclipse/java/
-  wget https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2021-09/R/eclipse-java-2021-09-R-linux-gtk-x86_64.tar.gz -O - | tar -xz -C $HOMEDIR/eclipse/java/
-  # Symlink Eclipse Java to $HOMEDIR/bin/eclipse-java
-  ln -s  $HOMEDIR/eclipse/java/eclipse/eclipse  $HOMEDIR/.local/bin/eclipse-java
-  # Copy the .desktop file for eclipse java to add it to the applications menu
-  cp ./assets/eclipse/eclipse-java.desktop $HOMEDIR/.local/share/applications/eclipse-java.desktop
-  sed -i "/s/HOMEDIR/$HOMEDIR/g" $HOMEDIR/.local/share/applications/eclipse-java.desktop
-  chmod +x $HOMEDIR/.local/share/applications/eclipse-java.desktop
-}
-
-install_eclipse_cpp(){
-  # Dependency
-  apt-get -qy install libcanberra-gtk-module 
-  apt-get -qy install default-jdk 
-
-  mkdir -p $HOMEDIR/.local/bin
-
-  # Install Eclipse Cpp to $HOMEDIR/eclipse/cpp/eclipse/eclipse
-  mkdir -p $HOMEDIR/eclipse/cpp/
-  wget https://mirror.umd.edu/eclipse/technology/epp/downloads/release/2021-09/R/eclipse-cpp-2021-09-R-linux-gtk-x86_64.tar.gz -O - | tar -xz -C $HOMEDIR/eclipse/cpp/
-  # Symlink Eclipse Cpp to $HOMEDIR/bin/eclipse-cpp
-  ln -s  $HOMEDIR/eclipse/cpp/eclipse/eclipse  $HOMEDIR/.local/bin/eclipse-cpp
-  # Add eclipse cpp to the applicaitons menu
-  cp ./assets/eclipse/eclipse-cpp.desktop $HOMEDIR/.local/share/applications/eclipse-cpp.desktop
-  sed -i "/s/HOMEDIR/$HOMEDIR/g" $HOMEDIR/.local/share/applications/eclipse-cpp.desktop
-  chmod +x $HOMEDIR/.local/share/applications/eclipse-cpp.desktop
-}
-
 
 # TODO - Install Git lfs
 
-# TODO - Install RawTherapee
+# TODO - Install Discord
 
-# TODO - Install GIMP
 
 main(){
+  install_deps
   install_apts
   install_snaps
-  install_pop_shell
-  install_desktop_utils
   add_ppas
   install_node
+  install_python
   install_freecad
   install_chrome
   install_vscode
   install_docker
-  install_eclipse_java
-  install_eclipse_cpp
   chown -R $USERNAME $HOMEDIR
 }
 
