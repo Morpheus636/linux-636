@@ -47,7 +47,7 @@ install_deps(){
   apt-get -qy upgrade 
   # Dependencies
   apt-get -qy install git 
-  apt-get -qy install make
+  apt-get -qy install cmake
   apt-get -qy install curl 
   apt-get -qy install software-properties-common 
   apt-get -qy install apt-transport-https 
@@ -74,6 +74,7 @@ install_apts(){
   apt-get -qy install rawtherapee 
   apt-get -qy install libreoffice
   apt-get -qy install usb-creator-gtk
+  apt-get -qy install virtualbox
 }
 
 
@@ -164,7 +165,7 @@ main(){
   install_docker
   chown -R $USERNAME $HOMEDIR
 }
-
+ 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     main "$@"
 fi
