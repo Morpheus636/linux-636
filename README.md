@@ -1,5 +1,5 @@
 # Desktop Config
-A set of configuration files (dotfiles) and shell scripts for setting up my desktop OS installations. Written for Ubuntu 20.04 LTS.
+A set of configuration files and shell scripts for setting up my desktop OS installations. Written for Ubuntu 20.04 LTS.
 
 You're welcome to use this repo as a starting point for your own install scripts. 
 
@@ -7,9 +7,6 @@ Releases that are not marked as pre-releases should be considered stable, but no
 implied or otherwise (see the license and copyright notice for more).
 
 # Usage
-The following is the primary way to use this setup tool. Other scritps can be
-run manually, so see the documentation below for more specific info.
-
 1. Install Ubuntu 20.04 Desktop. Minimal edition should work fine.
 2. Download this repository to somewhere in your user directory. `~/Documents` works well.
 3. `cd` into the directory
@@ -38,54 +35,57 @@ This runs all the other scripts.
 
 It should be run with sudo, and passed a username as the first argument.
 
-### install-apps.sh
-Installs the following. It also installs other dependencies (both explicitly 
-and implicitly through apt) which may not be listed here.
-
-Individual functions from this script can be `source`d to use them individually.
-See the documenation at the top of the file for more information on this.
-#### Apps
-- Git
-- Curl
-- Wget
-- Network Manager
-- NodeJS
-- Gnome Tweaks
-- Gnome Shell Extensions
-- Node Typescript
-- Pop Shell
-- Chrome
-- VSCode
-- Pycharm CE
-- Discord
-- Docker
-- Docker Compose
-- Filezilla
-- Thunderbird
-- OpenVPN Client (Optional - See Usage Instructions)
-- Morpheus636's Desktop Utils
-- Tree
-- HexChat
-- GIMP
-- RawTherapee
-#### PPAs
-- `ppa:deadsnakes/ppa`
-
-### install-theme.sh
-Installs the following themes and icon packs.
-- Avidity Total Dusk Theme (Included locally in Repo)
-- Avidity Total Dusk Suru Icon Pack (Reversed)
-
-### user-config.sh
-- Creates a `Repos` directory within `~/Documents/`
-- Configures an OpenVPN client connection (place an openvpn config file in this directory after git cloning)
-
-Individual functions from this script can be `source`d to use them individually.
-See the documenation at the top of the file for more information on this.
-
 # Development Utilities
 The `./dev_tools/` directory contains scripts used to streamline development.
 None of them should be run by sudo, and they are all documented within themselves. For information on any of them, run `<scriptpath> --help`.
+
+# Apps installed by this script:
+## Installed as Sudo
+### Using Apt (Non-default repos noted in parenthesis)
+- git
+- cmake
+- curl
+- wget
+- network-manager
+- default-jdk
+- gnome-tweaks
+- gnome-shell-extensions
+- vim
+- zeal
+- openvpn
+- filezilla
+- transmission-gtk
+- tree
+- hexchat
+- gimp
+- rawtherapee
+- libreoffice
+- usb-creator-gtk
+- virtualbox
+- python (deadsnakes/ppa PPA)
+    - Python 3.7
+    - Python 3.8
+    - Python 3.9
+    - Python 3.10
+- freecad (freecad-maintainers/freecad-stable PPA)
+- chrome (google repos)
+- vscode (microsoft repos)
+- docker (docker repos)
+### Using Snap
+- PyCharm
+- Thunderbird
+- Remmina
+### Other Install Methods
+- NodeJS 16
+
+## Installed as User
+- Pop Shell
+- Morpheus636's Desktop Utils
+- Poetry
+- Morpheus636's Zeal CLI
+- Eclipse IDE for C/C++ Developers
+- Eclipse IDE for Java Developers
+
 
 # Copyright Notice
 © Copyright 2021-2022 Josh Levin ([Morpheus636](https://github.com/morpheus636))
