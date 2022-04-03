@@ -23,6 +23,17 @@ HOMEDIR=/home/$1
 LOGFILE=$SCRIPTPATH/setup.log
 touch $LOGFILE
 
+# Exit if the username is not passed to the scrpt.
+if [[$USERNAME == ""]]; then
+  echo "You must pass your username as an argument."
+  exit
+fi
+# Exit if the script was not executed as sudo.
+if [[$USER != "root"]]
+  echo "You must run the script using sudo."
+  exit
+fi
+
 main(){
   # Run install apps
   chmod +x ./install-apps-sudo.sh
