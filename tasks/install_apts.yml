@@ -1,5 +1,5 @@
 - name: Install Packages
-  apt:
+  ansible.builtin.apt:
     pkg:
       - git
       - curl
