@@ -1,0 +1,36 @@
+# Thanks Peter - https://github.com/peterHoburg/workstation_setup/blob/main/tasks/install_docker.yml
+# https://docs.docker.com/engine/install/ubuntu/
+- name: Download Docker Install Script
+  get_url:
+    url: https://get.docker.com
+    dest: "/home/{{ main_user }}/Downloads/docker.sh"
+    mode: '0777'
+
+- name: Run Docker Install Script
+  become: true
+  become_user: "{{ root_user }}"
+  ansible.builtin.script:
+    cmd: "/home/{{ main_user }}/Downloads/docker.sh"
+  args:
+    creates: /usr/bin/docker
+
+- name: Add Docker Group
+  ansible.builtin.group:
+    name: docker
+    state: present
+
+- name: Add Current User to Docker Group
+  become: true
+  become_user: "{{ root_user }}"
+  ansible.builtin.user:
+    name: "{{ main_user }}"
+    groups: docker
+    append: yes
+
+- name: Download Docker-Compose Executable
+  become: true
+  become_user: "{{ root_user }}"
+  get_url:
+    url: "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64"
+    dest: "/usr/local/bin/docker-compose"
+    mode: '0777'

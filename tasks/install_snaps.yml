@@ -1,0 +1,15 @@
+- name: Install Snaps
+  become: true
+  become_user: "{{ root_user }}"
+  community.general.snap:
+    name:
+      - thunderbird
+      - remmina
+
+- name: Install Snaps Classic
+  become: true
+  become_user: "{{ root_user }}"
+  community.general.snap:
+    name:
+      - pycharm-community
+    classic: true

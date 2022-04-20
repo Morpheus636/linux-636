@@ -1,0 +1,21 @@
+- name: Add Chrome GPG Key
+  apt_key:
+    url: "https://dl.google.com/linux/linux_signing_key.pub"
+    state: present
+  become: true
+  become_user: "{{ root_user }}"
+
+- name: Install Chrome Repo
+  apt_repository:
+    repo: "deb http://dl.google.com/linux/chrome/deb/ stable main"
+    state: present
+    update_cache: true
+  become: true
+  become_user: "{{ root_user }}"
+
+- name: Install Chrome
+  apt:
+    name: google-chrome-stable
+    state: latest
+  become: true
+  become_user: "{{ root_user }}"

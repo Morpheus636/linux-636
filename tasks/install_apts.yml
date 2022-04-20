@@ -1,0 +1,30 @@
+- name: Install Packages
+  apt:
+    pkg:
+      - git
+      - curl
+      - software-properties-common
+      - apt-transport-https
+      - wget
+      - libcanberra-gtk-module
+      - default-jdk
+      - gnome-tweaks
+      - gnome-shell-extensions
+      - vim
+      - zeal
+      - openvpn
+      - filezilla
+      - build-essential
+      - transmission-gtk
+      - tree
+      - hexchat
+      - gimp
+      - rawtherapee
+      - libreoffice
+      - virtualbox
+      - gcc
+      - g++
+      - make
+    state: latest
+    become: true
+    become_user: {{ root_user }}
