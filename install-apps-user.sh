@@ -50,11 +50,6 @@ install_desktop_utils(){
   cd $WORKING_DIR
 }
 
-install_poetry(){
-  # Install poetry 
-  curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
-}
-
 install_zeal_cli(){
   # This depends on python and poetry, which are not installed by the install_deps function.
   git clone https://github.com/morpheus636/zeal-cli.git

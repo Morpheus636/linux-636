@@ -3,6 +3,8 @@
     repo: ppa:deadsnakes/ppa
     state: present
     update_cache: true
+  become: true
+  become_user: "{{ root_user }}"
 
 
 - name: Install Python Versions
@@ -14,15 +16,19 @@
      - python3.9
      - python3.10
     state: latest
+  become: true
+  become_user: "{{ root_user }}"
 
 
 # Thanks Peter - https://github.com/peterHoburg/workstation_setup/blob/main/tasks/install_python_poetry.yml
 # https://python-poetry.org/docs/master/#installing-with-the-official-installer
 - name: Download Poetry Install Script
   get_url:
-    url: https://install.python-p`oetry.org
+    url: https://install.python-poetry.org
     dest: "/home/{{ main_user }}/Downloads/install-poetry.py"
     mode: '0777'
+  become: true
+  become_user: "{{ main_user }}"
 
 - name: Run Poetry Install Script
   become: true

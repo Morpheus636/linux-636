@@ -25,6 +25,7 @@
       - gcc
       - g++
       - make
+      - node-typescript
     state: latest
-    become: true
-    become_user: {{ root_user }}
+  become: true
+  become_user: "{{ root_user }}"

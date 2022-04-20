@@ -1,6 +1,8 @@
 # Thanks Peter - https://github.com/peterHoburg/workstation_setup/blob/main/tasks/install_docker.yml
 # https://docs.docker.com/engine/install/ubuntu/
 - name: Download Docker Install Script
+  become: true
+  become_user: "{{ main_user }}"
   get_url:
     url: https://get.docker.com
     dest: "/home/{{ main_user }}/Downloads/docker.sh"
@@ -15,6 +17,8 @@
     creates: /usr/bin/docker
 
 - name: Add Docker Group
+  become: true
+  become_user: "{{ root_user }}"
   ansible.builtin.group:
     name: docker
     state: present
