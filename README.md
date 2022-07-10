@@ -2,9 +2,8 @@
 A set of configuration files and shell scripts for setting up my desktop OS installations. Written for Ubuntu 20.04 LTS.
 
 You're welcome to use this repo as a starting point for your own install scripts. 
+This tool is developed for my use but published so others can benefit. Pull requests will be closed without merging.
 
-Releases that are not marked as pre-releases should be considered stable, but nothing in this repository comes with any warranty,
-implied or otherwise (see the license and copyright notice for more).
 
 # Usage
 1. Install Ubuntu 20.04 Desktop. Minimal edition should work fine.
