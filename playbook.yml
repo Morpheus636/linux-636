@@ -2,15 +2,26 @@
   vars:
     main_user: "{{ main_user }}"
     root_user: root
+    temp_dir: "/home/{{ main_user }}/linux-636-temp/"
   become: true
   become_user: "{{ main_user }}"
-  pre_tasks:
-    - name: Update Apt Repositories
-      become: true
-      become_user: root
-      apt: update_cache=yes
-      changed_when: False
 
+  # Setup
+  pre_tasks:
+    - name: Create Temp Directory
+      ansible.builtin.file:
+        path: "{{ temp_dir }}"
+        state: Directory
+        mode: 0755
+      become: true
+      become_user: "{{ main_user }}"
+    - name: Update Apt Repositories
+      ansible.builtin.apt:
+        update_cache: yes
+      become: true
+      become_user: "{{ root_user }}"
+
+  # Run Scripts
   tasks:
     - import_tasks: ./tasks/install_apts.yml
     - import_tasks: ./tasks/install_chrome.yml
@@ -25,3 +36,12 @@
     - import_tasks: ./tasks/install_snaps.yml
     - import_tasks: ./tasks/install_vscode.yml
     - import_tasks: ./tasks/install_zeal_cli.yml
+
+  # Cleanup
+  post_tasks:
+    - name: Cleanup Temp Directory
+      ansible.builtin.file:
+        path: "{{ temp_dir }}"
+        state: absent
+      become: true
+      become_user: "{{ root_user }}"
