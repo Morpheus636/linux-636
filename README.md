@@ -1,5 +1,5 @@
 # Desktop Config
-A set of configuration files and shell scripts for setting up my desktop OS installations. Written for Ubuntu 20.04 LTS.
+A set of configuration files and shell scripts for setting up my desktop OS installations. Written for Ubuntu 22.04 LTS.
 
 You're welcome to use this repo as a starting point for your own install scripts. 
 
