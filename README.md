@@ -3,9 +3,6 @@ A set of configuration files and shell scripts for setting up my desktop OS inst
 
 You're welcome to use this repo as a starting point for your own install scripts. 
 
-Releases that are not marked as pre-releases should be considered stable, but nothing in this repository comes with any warranty,
-implied or otherwise (see the license and copyright notice for more).
-
 ## Development Utilities
 The `./dev_tools/` directory contains scripts used to streamline development.
 None of them should be run by sudo, and they are all documented within themselves. For information on any of them, run `<scriptpath> --help`.
