@@ -1,25 +1,3 @@
-- name: Add Deadsnake PPA
-  ansible.builtin.apt_repository:
-    repo: ppa:deadsnakes/ppa
-    state: present
-    update_cache: true
-  become: true
-  become_user: "{{ root_user }}"
-
-
-- name: Install Python Versions
-  apt: 
-    pkg:
-     - python3.7
-     - python3.8
-     - python3.9
-     - python3.9
-     - python3.10
-    state: latest
-  become: true
-  become_user: "{{ root_user }}"
-
-
 # Thanks Peter - https://github.com/peterHoburg/workstation_setup/blob/main/tasks/install_python_poetry.yml
 # https://python-poetry.org/docs/master/#installing-with-the-official-installer
 - name: Download Poetry Install Script
@@ -38,3 +16,5 @@
   args:
     creates: /home/{{ main_user }}/.local/bin/poetry
     executable: python3
+
+# TODO - Pyenv
