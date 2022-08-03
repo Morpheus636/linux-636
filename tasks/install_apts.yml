@@ -26,6 +26,11 @@
       - g++
       - make
       - node-typescript
+      - libnotify-dev
+      - libappindicator3-dev
+      - gnome-shell-extension-appindicator
+      - vlc 
+      - libvlc-dev 
     state: latest
   become: true
   become_user: "{{ root_user }}"
