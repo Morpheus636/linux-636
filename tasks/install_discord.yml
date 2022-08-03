@@ -1,0 +1,13 @@
+- name: Download Discord .deb file
+  ansible.builtin.get_url:
+    url: https://discord.com/api/download/canary?platform=linux&format=deb
+    dest: "{{ temp_dir }}/discord.deb"
+  become: true
+  become_user: "{{ main_user }}"
+
+- name: Install discord .deb
+  ansible.builtin.shell:
+    chdir: "{{ temp_dir }}"
+    cmd: apt install ./discord.deb
+  become: true
+  become_user: "{{ root_user }}"
