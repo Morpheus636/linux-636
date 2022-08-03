@@ -1,0 +1,12 @@
+- name: Clone Pop Shell Repo 
+  ansible.builtin.git:
+    repo: 'https://github.com/morpheus636/pop-shell.git'
+    dest: "/home/{{ main_user }}/pop-shell"
+  become: true
+  become_user: "{{ main_user }}"
+
+- name: Run Pop Shell Install Script
+  ansible.builtin.shell:
+    cmd: "cd ~/pop-shell && yes | make local-install"
+  become: true
+  become_user: "{{ main_user }}"
