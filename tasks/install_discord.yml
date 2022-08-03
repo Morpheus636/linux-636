@@ -8,6 +8,6 @@
 - name: Install discord .deb
   ansible.builtin.shell:
     chdir: "{{ temp_dir }}"
-    cmd: apt install ./discord.deb
+    cmd: apt-get install ./discord.deb -y
   become: true
   become_user: "{{ root_user }}"
