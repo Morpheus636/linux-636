@@ -26,11 +26,11 @@
       - g++
       - make
       - node-typescript
-      - libnotify-dev
-      - libappindicator3-dev
-      - gnome-shell-extension-appindicator
-      - vlc 
-      - libvlc-dev 
+      #- libnotify-dev
+      #- libappindicator3-dev
+      #- gnome-shell-extension-appindicator
+      #- vlc 
+      #- libvlc-dev 
       - rclone
     state: latest
   become: true
