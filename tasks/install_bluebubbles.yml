@@ -1,0 +1,30 @@
+- name: Download Bluebubbles
+  ansible.builtin.get_url:
+    url:  https://github.com/BlueBubblesApp/bluebubbles-app/releases/download/v1.9.1%2B30/bluebubbles_linux.zip
+    dest: "{{ temp_dir }}/bluebubbles_linux.zip"
+    mode: 0755
+  become: true
+  become_user: "{{ main_user }}"
+
+- name: Download Bluebubbles.desktop File
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/BlueBubblesApp/bluebubbles-app/5ae9a183734bf3de2107a95b3799429c49a85186/linux/Bluebubbles.desktop
+    dest: "{{ temp_dir }}/Bluebubbles.desktop"
+    mode: 0755 
+  become: true
+  become_user: "{{ main_user }}"
+
+- name: Download BlueBubbles install.sh Script
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/BlueBubblesApp/bluebubbles-app/5ae9a183734bf3de2107a95b3799429c49a85186/linux/install.sh
+    dest: "{{ temp_dir }}/install.sh"
+    mode: 0755
+  become: true
+  become_user: "{{ main_user }}"
+
+- name: Run BlueBubbles install.sh Script
+  ansible.builtin.shell:
+    chdir: "{{ temp_dir }}"
+    cmd: "{{ temp_dir }}/install.sh"
+  become: true
+  become_user: "{{ root_user }}"
