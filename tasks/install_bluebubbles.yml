@@ -28,3 +28,24 @@
     cmd: "{{ temp_dir }}/install.sh"
   become: true
   become_user: "{{ root_user }}"
+
+- name: Cleanup blububbles_linux.zip
+  ansible.builtin.file:
+    path: "{{ temp_dir }}/bluebubbles_linux.zip"
+    state: absent
+  become: true
+  become_user: "{{ root_user }}"
+
+- name: Cleanup Bluebubbles.desktop
+  ansible.builtin.file:
+    path: "{{ temp_dir }}/Bluebubbles.desktop"
+    state: absent
+  become: true
+  become_user: "{{ root_user }}"
+
+- name: Cleanup Bluebubbles install.sh script
+  ansible.builtin.file:
+    path: "{{ temp_dir }}/install.sh"
+    state: absent
+  become: true
+  become_user: "{{ root_user }}"
