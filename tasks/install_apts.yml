@@ -2,6 +2,7 @@
   ansible.builtin.apt:
     pkg:
       - git
+      - git-lfs
       - curl
       - software-properties-common
       - apt-transport-https
@@ -12,7 +13,6 @@
       - gnome-shell-extensions
       - vim
       - zeal
-      - openvpn
       - filezilla
       - build-essential
       - transmission-gtk
