@@ -32,6 +32,7 @@ help() {
    echo "none:  Get all supported config files."
    echo "-g     Get only git config files."
    echo "-b     Get only BASH config files."
+   echo "-v     Get only Vim config files."
    echo "-h     Print this Help message."
    echo 
    exit 0
@@ -50,9 +51,16 @@ get_bash_config() {
   cp $HOME/.bash_aliases ./assets/config/
 }
 
+get_vim_config() {
+  echo "Getting Vim Configuration"
+  # Get the .vimrc file
+  cp $HOME/.vimrc ./assets/config/
+}
+
 main() {
   get_git_config
   get_bash_config
+  get_vim_config
 }
 
 # Process the input options.
@@ -64,6 +72,10 @@ while getopts "gbh:" option; do
       ;;
     b ) # -g: Get BASH config files
       get_bash_config
+      exit 0
+      ;;
+    v ) # -v: Get Vim config files
+      get_vim_config
       exit 0
       ;;
     h ) # -h: Display Help
