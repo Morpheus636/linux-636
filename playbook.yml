@@ -32,7 +32,7 @@
     # - import_tasks: ./tasks/install_freecad.yml
     - import_tasks: ./tasks/install_node.yml
     - import_tasks: ./tasks/install_pop_shell.yml
-    - import_tasks: ./tasks/install_python.yml
+    # - import_tasks: ./tasks/install_python.yml
     - import_tasks: ./tasks/install_snaps.yml
     - import_tasks: ./tasks/install_vscode.yml
 
