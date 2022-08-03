@@ -1,0 +1,14 @@
+- name: Git Clone drive-sync.
+  ansible.builtin.git:
+    clone: true
+    repo: https://github.com/Morpheus636/drive-sync.git
+    dest: "{{ temp_dir }}/drive-sync"
+  become: true
+  become_user: "{{ main_user }}"
+
+- name: Run drive-sync install script
+  ansible.builtin.shell:
+    chdir: "{{ temp_dir }}/drive-sync"
+    cmd: ./install.sh
+  become: true
+  become_user: "{{ root_user }}"
