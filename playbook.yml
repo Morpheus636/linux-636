@@ -28,7 +28,7 @@
     - import_tasks: ./tasks/install_chrome.yml
     # - import_tasks: ./tasks/install_discord.yml
     - import_tasks: ./tasks/install_docker.yml
-    - import_tasks: ./tasks/install_eclipse.yml
+    # - import_tasks: ./tasks/install_eclipse.yml
     - import_tasks: ./tasks/install_freecad.yml
     - import_tasks: ./tasks/install_node.yml
     - import_tasks: ./tasks/install_pop_shell.yml
