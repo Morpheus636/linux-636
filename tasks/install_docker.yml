@@ -5,14 +5,14 @@
   become_user: "{{ main_user }}"
   get_url:
     url: https://get.docker.com
-    dest: "/home/{{ main_user }}/Downloads/docker.sh"
+    dest: "{{ temp_dir }}/docker.sh"
     mode: '0777'
 
 - name: Run Docker Install Script
   become: true
   become_user: "{{ root_user }}"
   ansible.builtin.script:
-    cmd: "/home/{{ main_user }}/Downloads/docker.sh"
+    cmd: "{{ temp_dir }}/docker.sh"
   args:
     creates: /usr/bin/docker
 
