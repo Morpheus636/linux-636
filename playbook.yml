@@ -2,7 +2,7 @@
   vars:
     main_user: "{{ main_user }}"
     root_user: root
-    temp_dir: "/home/{{ main_user }}/linux-636-temp/"
+    temp_dir: "/home/{{ main_user }}/Downloads/"
   become: true
   become_user: "{{ main_user }}"
 
