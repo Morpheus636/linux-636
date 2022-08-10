@@ -1,11 +1,20 @@
 # Desktop Config
 A set of configuration files and shell scripts for setting up my desktop OS installations. Written for Ubuntu 22.04 LTS.
 
-You're welcome to use this repo as a starting point for your own install scripts. 
+## Features
+- TODO
 
-## Development Utilities
-The `./dev_tools/` directory contains scripts used to streamline development.
-None of them should be run by sudo, and they are all documented within themselves. For information on any of them, run `<scriptpath> --help`.
+## Technologies
+- Ansible
+
+## Usage
+
+## Contributing
+This project is unmaintained, developed for my personal use and released for the benefit of anyone interested. Issues may not be addressed and pull
+requests will likely be closed without merging.
+
+## Credits
+- Thanks to my friend PeterHoburg for giving me a starting point.
 
 ## Copyright Notice
 © Copyright 2021-2022 Josh Levin ([Morpheus636](https://github.com/morpheus636))
