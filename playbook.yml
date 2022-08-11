@@ -24,17 +24,14 @@
   # Run Scripts
   tasks:
     - import_tasks: ./tasks/install_apts.yml
-    # - import tasks: ./tasks/install_bluebubbles.yml
     - import_tasks: ./tasks/install_chrome.yml
     - import_tasks: ./tasks/install_discord.yml
     - import_tasks: ./tasks/install_docker.yml
-    # - import_tasks: ./tasks/install_eclipse.yml
-    # - import_tasks: ./tasks/install_freecad.yml
     # - import_tasks: ./tasks/install_pop_shell.yml
     - import tasks: ./tasks/install_pycharm.yml
     # - import_tasks: ./tasks/install_python.yml
     - import_tasks: ./tasks/install_snaps.yml
-    - import_tasks: ./tasks/install_vscode.yml
+    - import_tasks: ./tasks/install_flatpaks.yml
 
   # Cleanup
   post_tasks:
