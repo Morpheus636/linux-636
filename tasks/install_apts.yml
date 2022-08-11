@@ -1,4 +1,4 @@
-- name: Install Packages
+- name: Install Apt Packages
   ansible.builtin.apt:
     pkg:
       - git
@@ -26,12 +26,10 @@
       - g++
       - make
       - node-typescript
-      #- libnotify-dev
-      #- libappindicator3-dev
-      #- gnome-shell-extension-appindicator
-      #- vlc 
-      #- libvlc-dev 
       - rclone
+      - thunderbird
+      - flatpak
+      - gnome-software-plugin-flatpak
     state: latest
   become: true
   become_user: "{{ root_user }}"
