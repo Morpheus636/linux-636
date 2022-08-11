@@ -4,13 +4,19 @@
     state: present
     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
     method: system
+  become: true
+  become_user: "{{ main_user }}"
 
 - name: Install Bluebubbles Flatpak
   community.general.flatpak:
     name: app.bluebubbles.BlueBubbles
     state: present
+  become: true
+  become_user: "{{ main_user }}"
 
 - name: Install Eclipse Flatpak
   community.general.flatpak:
     name: org.eclipse.java
     state: present
+  become: true
+  become_user: "{{ main_user }}"
