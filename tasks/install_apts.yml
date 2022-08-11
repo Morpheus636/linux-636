@@ -30,6 +30,19 @@
       - thunderbird
       - flatpak
       - gnome-software-plugin-flatpak
+      - libssl-dev
+      - zlib1g-dev
+      - libbz2-dev
+      - libreadline-dev
+      - libsqlite3-dev
+      - llvvm
+      - libncursesw5-dev
+      - xz-utils
+      - tk-dev
+      - libxml2-dev
+      - libxmlsec1-dev
+      - libffi-dev
+      - liblzma-dev
     state: latest
   become: true
   become_user: "{{ root_user }}"
