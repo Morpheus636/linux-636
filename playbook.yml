@@ -31,6 +31,7 @@
     # - import_tasks: ./tasks/install_eclipse.yml
     # - import_tasks: ./tasks/install_freecad.yml
     # - import_tasks: ./tasks/install_pop_shell.yml
+    - import tasks: ./tasks/install_pycharm.yml
     # - import_tasks: ./tasks/install_python.yml
     - import_tasks: ./tasks/install_snaps.yml
     - import_tasks: ./tasks/install_vscode.yml
