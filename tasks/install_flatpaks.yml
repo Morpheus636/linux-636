@@ -1,0 +1,16 @@
+- name: Add Flathub Flatpak Repo
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+    method: system
+
+- name: Install Bluebubbles Flatpak
+  community.general.flatpak:
+    name: app.bluebubbles.BlueBubbles
+    state: present
+
+- name: Install Eclipse Flatpak
+  community.general.flatpak:
+    name: org.eclipse.java
+    state: present
